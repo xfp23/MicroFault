@@ -1,0 +1,15 @@
+*.*
+
+!include/
+
+!src/
+
+!README.md
+
+!.gitignore
+
+!LICENSE
+
+!*.c
+
+!*.h
