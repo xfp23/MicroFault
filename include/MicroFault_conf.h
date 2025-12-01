@@ -63,7 +63,7 @@ extern "C" {
  *
  * Used to adapt projects where severity numbering rules differ.
  */
-#define MICROFAULT_LEVEL_ORDER_REVERSED     1u
+#define MICROFAULT_LEVEL_ORDER_REVERSED     0u
 
 
 #ifdef __cplusplus
