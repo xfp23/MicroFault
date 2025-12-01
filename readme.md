@@ -1,3 +1,6 @@
+
+[中文](./README.zh.md)
+
 # MicroFault Library
 
 A lightweight, embedded fault management system for microcontroller applications. Provides efficient tracking and management of system faults with configurable severity levels.
