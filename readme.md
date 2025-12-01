@@ -266,4 +266,4 @@ void main(void) {
 
 ## License
 
-Copyright (c) 2025
+Copyright (c) 2025 [LICENSE](./LICENSE)
