@@ -42,7 +42,7 @@ if (MicroFault_Init() == MICROFAULT_STATUS_OK) {
 ### 2. Register Faults
 
 ```c
-MicroFault_Status_t MicroFault_ResgisterFault(
+MicroFault_Status_t MicroFault_RegisterFault(
     const MicroFault_FaultTableEntry_t *table,
     size_t size
 );
@@ -66,7 +66,7 @@ MicroFault_FaultTableEntry_t faults[] = {
     {MICROFAULT_LEVEL_SERIOUS, 0x03},    // Power loss
 };
 
-MicroFault_ResgisterFault(faults, 3);
+MicroFault_RegisterFault(faults, 3);
 ```
 
 ---
@@ -234,7 +234,7 @@ MicroFault_FaultTableEntry_t system_faults[] = {
 
 void init_fault_system(void) {
     MicroFault_Init();
-    MicroFault_ResgisterFault(system_faults, 3);
+    MicroFault_RegisterFault(system_faults, 3);
 }
 
 void timer_isr(void) {

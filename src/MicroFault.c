@@ -12,7 +12,7 @@ MicroFault_Status_t MicroFault_Init()
     return MICROFAULT_STATUS_OK;
 }
 
-MicroFault_Status_t MicroFault_ResgisterFault(const MicroFault_FaultTableEntry_t *table, size_t size)
+MicroFault_Status_t MicroFault_RegisterFault(const MicroFault_FaultTableEntry_t *table, size_t size)
 {
     if (table == NULL || size == 0 || size > MICROFAULT_MAXNUMBER_OF_FAULTS)
     {

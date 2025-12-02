@@ -44,7 +44,7 @@ extern MicroFault_Status_t MicroFault_Init();
  *         - MICROFAULT_STATUS_OK: Faults registered successfully
  *         - MICROFAULT_STATUS_INVALID_PARAM: Invalid parameters (NULL table, size 0, or size exceeds maximum)
  */
-extern MicroFault_Status_t MicroFault_ResgisterFault(const MicroFault_FaultTableEntry_t *table, size_t size);
+extern MicroFault_Status_t MicroFault_RegisterFault(const MicroFault_FaultTableEntry_t *table, size_t size);
 
 /**
  * @brief Enable/activate a specific fault by its code.
