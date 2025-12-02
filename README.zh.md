@@ -1,5 +1,5 @@
 
-[En](./readme.md)
+[EN](./readme.md)
 
 # MicroFault 库
 
@@ -267,3 +267,5 @@ void main(void) {
 ## 许可证
 
 版权所有 (c) 2025
+
+[LICENSE](./LICENSE)
