@@ -4,7 +4,7 @@
 
 !src/
 
-!README.md
+!*.md
 
 !.gitignore
 
@@ -13,3 +13,5 @@
 !*.c
 
 !*.h
+
+!CMakeLists.txt
