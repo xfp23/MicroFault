@@ -98,7 +98,7 @@ MicroFault_Status_t MicroFault_TimerHandler(MicroFault_FaultInfo_t *info)
 
 #elif MICROFAULT_LEVEL_ORDER_REVERSED == 1 // Reversed Order (1=Serious, 3=Minor, lower value is more serious)
 
-    MicroFault_Level_t highestLevel = (MicroFault_Level_t)(MICROFAULT_LEVEL_MINOR + 1); 
+    MicroFault_Level_t highestLevel = (MicroFault_Level_t)(MICROFAULT_LEVEL_MINOR + 1);
     bool faultFound = false;
 
     for (size_t i = 0; i < MicroFault_Handle->count; i++)
@@ -124,26 +124,38 @@ MicroFault_Status_t MicroFault_TimerHandler(MicroFault_FaultInfo_t *info)
 #error "Unsupported MICROFAULT_LEVEL_ORDER_REVERSED value"
 #endif
 
-    for (size_t i = MicroFault_Handle->index; i < MicroFault_Handle->count; i++)
+    size_t start = MicroFault_Handle->index;
+
+    for (size_t i = start; i < MicroFault_Handle->count; i++)
     {
-        if (MicroFault_Handle->table[i].enabled == true)
+        if (MicroFault_Handle->table[i].enabled)
         {
             MicroFault_Handle->index = i + 1;
+            if (MicroFault_Handle->index >= MicroFault_Handle->count)
+                MicroFault_Handle->index = 0;
 
             info->level = highestLevel;
-
             info->code = MicroFault_Handle->table[i].code;
-
-            if (MicroFault_Handle->index >= MicroFault_Handle->count)
-            {
-                MicroFault_Handle->index = 0;
-            }
             return MICROFAULT_STATUS_OK;
         }
     }
 
-    info->code = 0x00;
+    for (size_t i = 0; i < start; i++)
+    {
+        if (MicroFault_Handle->table[i].enabled)
+        {
+            MicroFault_Handle->index = i + 1;
+            if (MicroFault_Handle->index >= MicroFault_Handle->count)
+                MicroFault_Handle->index = 0;
+
+            info->level = highestLevel;
+            info->code = MicroFault_Handle->table[i].code;
+            return MICROFAULT_STATUS_OK;
+        }
+    }
+
+    // 没找到
     info->level = MICROFAULT_LEVEL_NONE;
-    
+    info->code = 0;
     return MICROFAULT_STATUS_NOT_FOUND;
 }

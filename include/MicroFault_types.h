@@ -7,8 +7,9 @@
  * @brief Global type definitions for MicroFault
  */
 
-#include <stdint.h>
-#include <stdbool.h>
+#include "stdint.h"
+#include "stdbool.h"
+#include "stddef.h"
 #include "MicroFault_conf.h"
 
 #ifdef __cplusplus

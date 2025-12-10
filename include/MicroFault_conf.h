@@ -43,7 +43,7 @@ extern "C" {
  * @brief Number of user-defined faults.
  * This is for your custom fault table entries.
  */
-#define MICROFAULT_NUMBER_OF_USER_FAULTS    4u
+#define MICROFAULT_NUMBER_OF_USER_FAULTS    18u
 
 
 /* -------------------------------------------------------------------------- */
@@ -63,7 +63,7 @@ extern "C" {
  *
  * Used to adapt projects where severity numbering rules differ.
  */
-#define MICROFAULT_LEVEL_ORDER_REVERSED     0u
+#define MICROFAULT_LEVEL_ORDER_REVERSED     1u
 
 
 #ifdef __cplusplus
