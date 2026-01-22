@@ -157,7 +157,34 @@ MicroFault_SetALL();  // Activate all faults (test mode)
 
 ---
 
-### 7. Timer Handler (Query Highest Fault Level)
+### 7. Get Fault
+
+```c
+bool MicroFault_GetFault(MicroFault_FaultCode_t code);
+```
+
+**Purpose:** Fault status of obtaining fault codes
+
+**Parameters:** 
+- `code` - The fault code to get
+
+**Returns:**
+- `bool` - true fault triggered 
+- `bool` - false fault not triggered
+
+**Example:**
+```c
+ if(MicroFault_GetFault(0) == true)
+ {
+    printf("Zero code fault triggered !\n");
+ } else {
+     printf("Zero code fault not triggered !\n");
+ }
+```
+
+---
+
+### 8. Timer Handler (Query Highest Fault Level)
 
 ```c
 MicroFault_Status_t MicroFault_TimerHandler(MicroFault_FaultInfo_t *info);

@@ -112,6 +112,15 @@ extern MicroFault_Status_t MicroFault_SetALL();
  */
 extern MicroFault_Status_t MicroFault_TimerHandler(MicroFault_FaultInfo_t *info);
 
+/**
+ * @brief Get the fault table code Status
+ * 
+ * @param code fault code
+ * @return true fault enable
+ * @return false fault disable
+ */
+extern bool MicroFault_GetFault(MicroFault_FaultCode_t code);
+
 #ifdef __cplusplus
 }
 #endif // !__cplusplus

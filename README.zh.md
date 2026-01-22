@@ -157,7 +157,34 @@ MicroFault_SetALL();  // 激活所有故障（测试模式）
 
 ---
 
-### 7. 定时器处理程序（查询最高故障级别）
+### 7. Get Fault
+
+```c
+bool MicroFault_GetFault(MicroFault_FaultCode_t code);
+```
+
+**功能:** 获取故障码的故障状态
+
+**参数:** 
+- `code` - 故障码
+
+**返回:**
+- `bool` - true 故障触发 
+- `bool` - false 故障未触发
+
+**Example:**
+```c
+ if(MicroFault_GetFault(0) == true)
+ {
+    printf("0 故障码被触发 !\n");
+ } else {
+     printf("0 故障码未触发 !\n");
+ }
+```
+
+---
+
+### 8. 定时器处理程序（查询最高故障级别）
 
 ```c
 MicroFault_Status_t MicroFault_TimerHandler(MicroFault_FaultInfo_t *info);

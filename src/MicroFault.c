@@ -1,7 +1,7 @@
 #include "MicroFault.h"
 #include "string.h"
 
-static volatile MicroFault_Object_t MicroFault_Obj = {0};
+static MicroFault_Object_t MicroFault_Obj = {0};
 
 MicroFault_Handle_t const MicroFault_Handle = &MicroFault_Obj;
 
@@ -158,4 +158,16 @@ MicroFault_Status_t MicroFault_TimerHandler(MicroFault_FaultInfo_t *info)
     info->level = MICROFAULT_LEVEL_NONE;
     info->code = 0;
     return MICROFAULT_STATUS_NOT_FOUND;
+}
+
+bool MicroFault_GetFault(MicroFault_FaultCode_t code)
+{
+    for (size_t i = 0; i < MicroFault_Handle->count; i++)
+    {
+        if (MicroFault_Handle->table[i].code == code)
+        {
+           return MicroFault_Handle->table[i].enabled;
+        }
+    }
+    return false;
 }
