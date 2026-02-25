@@ -106,7 +106,7 @@ MicroFault_Status_t MicroFault_TimerHandler(MicroFault_FaultInfo_t *info)
         if (MicroFault_Handle->table[i].enabled == true)
         {
             faultFound = true;
-            if (MicroFault_Handle->table[i].level < highestLevel)
+            if (MicroFault_Handle->table[i].level > highestLevel)
             {
                 highestLevel = MicroFault_Handle->table[i].level;
             }
