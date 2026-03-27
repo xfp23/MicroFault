@@ -50,11 +50,11 @@ typedef enum
 {
 
     MICROFAULT_LEVEL_NONE = 0,       // No fault
-#if MICROFAULT_LEVEL_ORDER_REVERSED == 0
+#if MICROFAULT_LEVEL_ORDER_REVERSED == 1
     MICROFAULT_LEVEL_SERIOUS = 3,    // Serious fault
     MICROFAULT_LEVEL_GENERAL = 2,    // General fault
     MICROFAULT_LEVEL_MINOR = 1,      // Minor fault
-#elif MICROFAULT_LEVEL_ORDER_REVERSED == 1
+#elif MICROFAULT_LEVEL_ORDER_REVERSED == 0
     MICROFAULT_LEVEL_SERIOUS = 1,    // Serious fault
     MICROFAULT_LEVEL_GENERAL = 2,    // General fault
     MICROFAULT_LEVEL_MINOR = 3,      // Minor fault

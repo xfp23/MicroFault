@@ -37,13 +37,13 @@ extern "C" {
 /**
  * @brief Maximum number of faults that the system can store.
  */
-#define MICROFAULT_MAXNUMBER_OF_FAULTS      32u
+#define MICROFAULT_MAXNUMBER_OF_FAULTS      10u
 
 /**
  * @brief Number of user-defined faults.
  * This is for your custom fault table entries.
  */
-#define MICROFAULT_NUMBER_OF_USER_FAULTS    18u
+#define MICROFAULT_NUMBER_OF_USER_FAULTS    8u
 
 
 /* -------------------------------------------------------------------------- */
